@@ -2,6 +2,7 @@ extends CanvasLayer
 
 # Notifies `Main` node that the button has been pressed
 signal start_game
+signal options_menu
 
 # Displays a temporary message.
 func show_message(text):
@@ -28,6 +29,7 @@ func show_game_over():
 	await get_tree().create_timer(1.0).timeout
 	$StartButton.show()
 	$Instructions.show()
+	$OptionsButton.show()
 	$Icon.show()
 
 func update_score(score):
@@ -38,6 +40,7 @@ func _on_start_button_pressed() -> void:
 	$StartButton.hide()
 	$Instructions.hide()
 	$SelectSFX.play()
+	$OptionsButton.hide()
 	
 	# Show the scorelabel the first time the button is pressed.
 	$ScoreLabel.show()
@@ -53,3 +56,8 @@ func _on_message_timer_timeout() -> void:
 func update_warning (threshold, diff_mult, timer_count) -> void:
 	var barrier = str(threshold * diff_mult)
 	$WarningLabel.text = "Difficulty: " + str(diff_mult) + " - Reach " + barrier + " Points - Time Left: " + str(int(timer_count))
+	
+
+func _on_options_button_pressed() -> void:
+	$SelectSFX.play()
+	options_menu.emit()

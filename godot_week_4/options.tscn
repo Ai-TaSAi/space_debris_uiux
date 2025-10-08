@@ -1,0 +1,217 @@
+[gd_scene load_steps=6 format=3 uid="uid://tfsdmtuxo0e7"]
+
+[ext_resource type="Script" uid="uid://cy3ae2vtrdnc" path="res://options.gd" id="1_se8ut"]
+[ext_resource type="FontFile" uid="uid://djxvmgfurl5mh" path="res://fonts/Magnetar.otf" id="2_ao2gm"]
+[ext_resource type="AudioStream" uid="uid://csk7eby6pgjuk" path="res://art/undertale-select-sound.mp3" id="3_ao2gm"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_64ctp"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_se8ut"]
+events = [SubResource("InputEventAction_64ctp")]
+
+[node name="Options" type="CanvasLayer"]
+script = ExtResource("1_se8ut")
+
+[node name="VolumeTitle2" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -386.0
+offset_top = 531.0
+offset_right = 386.0
+offset_bottom = 672.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ao2gm")
+theme_override_font_sizes/font_size = 24
+text = "Controls:
+
+Arrows/WASD - Move/Rotate
+Space - use seismic charge
+Esc - pause game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LightingTitle" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -228.5
+offset_top = 153.0
+offset_right = 228.5
+offset_bottom = 256.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ao2gm")
+theme_override_font_sizes/font_size = 50
+text = "darkness"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LightingValue" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -228.5
+offset_top = 239.0
+offset_right = 228.5
+offset_bottom = 342.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ao2gm")
+theme_override_font_sizes/font_size = 50
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeTitle" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -228.5
+offset_top = 336.0
+offset_right = 228.5
+offset_bottom = 439.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ao2gm")
+theme_override_font_sizes/font_size = 50
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeValue" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -228.5
+offset_top = 430.0
+offset_right = 228.5
+offset_bottom = 533.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ao2gm")
+theme_override_font_sizes/font_size = 50
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsTitles" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -228.5
+offset_top = 57.0
+offset_right = 228.5
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ao2gm")
+theme_override_font_sizes/font_size = 72
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -116.0
+offset_right = 96.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("2_ao2gm")
+theme_override_font_sizes/font_size = 40
+shortcut = SubResource("Shortcut_se8ut")
+text = "Back"
+
+[node name="LightVolUp" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 84.0
+offset_top = -142.0
+offset_right = 156.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("2_ao2gm")
+theme_override_font_sizes/font_size = 40
+shortcut = SubResource("Shortcut_se8ut")
+text = ">"
+
+[node name="LightVolDown" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -142.0
+offset_right = -84.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("2_ao2gm")
+theme_override_font_sizes/font_size = 40
+shortcut = SubResource("Shortcut_se8ut")
+text = "<"
+
+[node name="VolumeUp" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 84.0
+offset_top = 47.0
+offset_right = 156.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("2_ao2gm")
+theme_override_font_sizes/font_size = 40
+shortcut = SubResource("Shortcut_se8ut")
+text = ">"
+
+[node name="VolumeDown" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = 47.0
+offset_right = -84.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("2_ao2gm")
+theme_override_font_sizes/font_size = 40
+shortcut = SubResource("Shortcut_se8ut")
+text = "<"
+
+[node name="SelectSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ao2gm")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="LightVolUp" to="." method="_on_light_vol_up_pressed"]
+[connection signal="pressed" from="LightVolDown" to="." method="_on_light_vol_down_pressed"]
+[connection signal="pressed" from="VolumeUp" to="." method="_on_volume_up_pressed"]
+[connection signal="pressed" from="VolumeDown" to="." method="_on_volume_down_pressed"]

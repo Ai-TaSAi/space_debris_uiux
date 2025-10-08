@@ -86,7 +86,7 @@ func _process(delta): # Runs the whole time.
 		if (abs(velocity.y) < deceleration):
 			velocity.y = 0
 	
-	print(velocity)
+	# print(velocity)
 		
 	position.x += velocity.x * delta * speed # Modify character position based on the velocity, by the system FPS.
 	position.y += velocity.y * delta * speed

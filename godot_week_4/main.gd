@@ -6,7 +6,15 @@ var diff_mult
 
 var threshold = 20
 
+var on_title = true
+var in_game = false
+var in_options = false
+
 func _ready() -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), $Options.volume)
+	$DirectionalLight2D.energy = $Options.darkness
+	on_title = true
+	in_game = false
 	pass
 
 # Upon a game over, pause the mob and score timers.
@@ -20,6 +28,9 @@ func game_over() -> void:
 	$Music.stop()
 	$DeathSound.play()
 	$GameOverSound.play()
+	
+	on_title = true
+	in_game = false
 
 # Upon starting a new game, reset score, and start player at specified position.
 func new_game():
@@ -39,6 +50,9 @@ func new_game():
 	
 	# Play music upon game start.
 	$Music.play()
+	
+	on_title = false
+	in_game = true
 
 
 func _on_mob_timer_timeout() -> void:
@@ -101,3 +115,21 @@ func _on_player_nuke() -> void:
 	if (score < 0) :
 		score = 0
 	$HUD.update_score(score)
+
+
+func _on_hud_options_menu() -> void:
+	$HUD/SelectSFX.play()
+	$HUD.hide()
+	$Options.show()
+	in_options = true
+
+
+func _on_options_go_back() -> void:
+	$HUD/SelectSFX.play()
+	$HUD.show()
+	$Options.hide()
+	in_options = false
+	
+
+func _on_options_up_light() -> void:
+	$DirectionalLight2D.energy = $Options.darkness
